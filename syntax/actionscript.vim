@@ -37,7 +37,6 @@ syn keyword actionScriptRepeat				do while for in
 syn keyword actionScriptCase				break continue switch case default
 syn keyword actionScriptConstructor			new
 syn keyword actionScriptObjects arguments super var this callee caller call apply
-syn keyword actionScriptTrace trace
 syn keyword actionScriptStatement			return with
 syn keyword actionScriptFunction			function on onClipEvent
 syn keyword actionScriptValue				true false undefined null NaN void
@@ -80,7 +79,6 @@ if version >= 508 || !exists("did_actionscript_syn_inits")
   HiLink actionScriptConditional	Conditional
   HiLink actionScriptRepeat		Repeat
   HiLink actionScriptCase		Label
-  HiLink actionScriptTrace Label
   HiLink actionScriptConstructor	Operator
   HiLink actionScriptObjects		Operator
   HiLink actionScriptStatement		Statement
