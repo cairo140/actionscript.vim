@@ -1,3 +1,5 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=1061
+Forked from http://www.vim.org/scripts/script.php?script_id=1061
 
-Updated Igor Dvorsky's ActionScript 1.0 color syntax file vimscript #413 to include ActionScript 2.0 and ActionScript 3.0 keywords.
+Install this file among your syntax files or using a vim plugin manager like pathogen. You may also need to add something like the following to your vimrc to get it to recognize *.as as actionscript:
+
+    au BufRead,BufNewFile *.as set filetype=actionscript
