@@ -14,8 +14,8 @@ if !exists("main_syntax")
   if version < 600
     syntax clear
   elseif exists("b:current_syntax")
-  finish
-endif
+    finish
+  endif
   let main_syntax = 'actionscript'
 endif
 
@@ -31,9 +31,13 @@ syn region  actionScriptStringD				start=+"+  skip=+\\\\\|\\"+  end=+"+  contain
 syn region  actionScriptStringS				start=+'+  skip=+\\\\\|\\'+  end=+'+  contains=actionScriptSpecial
 syn match   actionScriptSpecialCharacter		"'\\.'"
 syn match   actionScriptNumber				"-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
+syn match actionScriptConstant "[A-Z][A-Za-z]*"
+syn match actionScriptLocalVariable "[a-z][_A-Za-z]*"
+syn match actionScriptPrivateVariable "_[a-z][_A-Za-z0-9]*"
+syn match actionScriptProperty "\.[a-z][_A-Za-z0-9]*"hs=s+1
 syn keyword actionScriptConditional			if else and or not
 syn keyword actionScriptRepeat				do while for in
-syn keyword actionScriptCase				break continue switch case default
+syn keyword actionScriptLabel				break continue switch case default
 syn keyword actionScriptConstructor			new
 syn keyword actionScriptObjects arguments super var this callee caller call apply
 syn keyword actionScriptStatement			return with
@@ -71,13 +75,15 @@ if version >= 508 || !exists("did_actionscript_syn_inits")
   HiLink actionScriptCharacter		Character
   HiLink actionScriptSpecialCharacter	actionScriptSpecial
   HiLink actionScriptNumber		actionScriptValue
+  HiLink actionScriptConstant Constant
+  HiLink actionScriptPrivateVariable Identifier
   HiLink actionScriptBraces		Function
   HiLink actionScriptError		Error
   HiLink actionScrParenError		actionScriptError
   HiLink actionScriptInParen		actionScriptError
   HiLink actionScriptConditional	Conditional
   HiLink actionScriptRepeat		Repeat
-  HiLink actionScriptCase		Label
+  HiLink actionScriptLabel		Label
   HiLink actionScriptConstructor	Operator
   HiLink actionScriptObjects		Operator
   HiLink actionScriptStatement		Statement
@@ -85,7 +91,7 @@ if version >= 508 || !exists("did_actionscript_syn_inits")
   HiLink actionScriptValue		Boolean
   HiLink actionScriptMethods		Statement
   HiLink actionScriptException		Exception
-  HiLink actionScriptAS2		Function
+  HiLink actionScriptAS2		Operator
   HiLink actionScriptInclude		Include
   delcommand HiLink
 endif
