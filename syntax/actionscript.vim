@@ -41,7 +41,7 @@ syn keyword actionScriptStatement			return with
 syn keyword actionScriptFunction			function on onClipEvent
 syn keyword actionScriptValue				true false undefined null NaN void
 syn match   actionScriptBraces				"([{}])"
-syn keyword actionScriptException 			try catch finally throw name message
+syn keyword actionScriptException 			try catch finally throw
 syn keyword actionScriptAS2 				class extends public private static interface implements import dynamic evaluate package const include use protected native internal override final 
 syn keyword actionScriptInclude #include #initClip #endInitClip
 
